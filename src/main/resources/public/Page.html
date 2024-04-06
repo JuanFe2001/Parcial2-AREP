@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Busquedas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Busquedas</h1>
+
+<h2>Búsqueda Lineal</h2>
+<form id="linearSearchForm">
+    <label for="inputList">Recuerde la lista debe ir separada por comas</label><br>
+    <label for="inputList">Lista de entrada:</label><br>
+    <input type="text" id="inputList" name="inputlist" value="10,20,13,40,60"><br>
+    <label for="linearValue">Valor a buscar:</label><br>
+    <input type="text" id="linearValue" name="value" value="13"><br><br>
+    <input type="button" value="Buscar" onclick="linearSearch()">
+</form>
+<div id="linearSearchResult"></div>
+
+<h2>Búsqueda Binaria</h2>
+<form id="binarySearchForm">
+    <label for="inputList">Recuerde la lista debe ir separada por comas y ordenada</label><br>
+    <label for="binaryInputList">Lista de entrada</label><br>
+    <input type="text" id="binaryInputList" name="inputlist" value="10,13,20,40,60"><br>
+    <label for="binaryValue">Valor a buscar:</label><br>
+    <input type="text" id="binaryValue" name="value" value="13"><br><br>
+    <input type="button" value="Buscar" onclick="binarySearch()">
+</form>
+<div id="binarySearchResult"></div>
+
+<script>
+    function linearSearch() {
+        let inputList = document.getElementById("inputList").value;
+        let value = document.getElementById("linearValue").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("linearSearchResult").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "/linear-search?inputlist=" + inputList + "&value=" + value);
+        xhttp.send();
+    }
+
+    function binarySearch() {
+        let inputList = document.getElementById("binaryInputList").value;
+        let value = document.getElementById("binaryValue").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("binarySearchResult").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "/binary-search?inputlist=" + inputList + "&value=" + value);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>
