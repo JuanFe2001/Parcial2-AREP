@@ -79,6 +79,9 @@ Diseñe un prototipo de sistema de microservicios que tenga un servicio (En la f
 **TERMINAL EN PROXY**:
 ![image](https://github.com/JuanFe2001/Parcial2_AREP/assets/123691538/f77d6ec8-827d-4944-b8e8-8fbba724f308)
 
+**Video Despliegue Azure**
+
+https://youtu.be/E_RfGy4CGgg
 
 
 
